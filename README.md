@@ -1,70 +1,138 @@
-# Getting Started with Create React App
+# TypeRacer Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based typing game with a retro terminal aesthetic to test and improve your typing speed and accuracy.
 
-## Available Scripts
+![TypeRacer Screenshot](./public/images/typeracer-screenshot.png)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Multiple Difficulty Levels**: Easy, Medium, and Hard modes with varying text complexity and time limits
+- **Real-time Statistics**: Live tracking of WPM (Words Per Minute), accuracy, and error count
+- **Daily Challenges**: New programming quotes each day to keep practice fresh
+- **Detailed Results**: Comprehensive post-game analysis of your typing performance
+- **Terminal Aesthetic**: Authentic CRT monitor styling with scanlines and green text
+- **Responsive Design**: Fully playable on desktop and mobile devices
+- **Keyboard Shortcuts**: Quick access to game controls with keyboard commands
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React (with Create React App)
+- React Router for navigation
+- Tailwind CSS for styling
+- Custom React hooks for typing logic
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Start the development server:
+   ```
+   npm start
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-### `npm run build`
+## How to Play
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Home Screen**: Select your difficulty level and press "START GAME"
+2. **Daily Challenge**: Try the daily challenge for a consistent way to track improvement
+3. **Game Screen**: Type the displayed text as accurately and quickly as possible
+4. **Results Screen**: Review your performance statistics when you complete the text
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Game Controls
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **F1**: Open help menu
+- **F5**: Restart current game
+- **ESC**: Return to home screen
 
-### `npm run eject`
+## Game Mechanics
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Difficulty Levels
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Level | Description | Time Limit | Min. WPM | Text Length |
+|-------|-------------|------------|----------|------------|
+| Easy  | Short, simple sentences | None | 20 WPM | 20-60 chars |
+| Medium | Moderate complexity | 90 seconds | 40 WPM | 100-200 chars |
+| Hard | Complex paragraphs | 60 seconds | 60 WPM | 200-400 chars |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Performance Metrics
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+TypeRacer calculates several metrics to help you understand your typing performance:
 
-## Learn More
+- **WPM (Words Per Minute)**: Standard measure of typing speed (5 characters = 1 word)
+- **Gross WPM**: Raw typing speed without accounting for errors
+- **Net WPM**: Typing speed with penalties for errors
+- **Accuracy**: Percentage of correctly typed characters
+- **Error Count**: Total number of typing mistakes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+src/
+├── components/       # Reusable UI components
+│   ├── Footer.jsx    # Footer with scanline effect
+│   ├── Header.jsx    # Navigation header
+│   └── ...
+├── hooks/            # Custom React hooks
+│   └── useTyping.js  # Core typing logic and calculations
+├── pages/            # Main application views
+│   ├── Home.jsx      # Landing page
+│   ├── GamePage.js   # Main typing game interface
+│   └── ResultsPage.js # Performance results display
+├── utils/            # Helper functions and data
+│   ├── difficultyLevels.js # Game difficulty settings
+│   ├── dailyChallenges.js  # Daily challenge texts
+│   └── sounds.js     # Sound effect utilities
+└── styles/           # Additional CSS stylesheets
+```
 
-### Code Splitting
+## Core Components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### useTyping Hook
 
-### Analyzing the Bundle Size
+The central hook that handles:
+- Real-time typing input processing
+- WPM and accuracy calculations
+- Error detection and handling
+- Game completion logic
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Home.jsx
 
-### Making a Progressive Web App
+The landing page featuring:
+- Loading animation with terminal aesthetic
+- Difficulty selection dropdown
+- Daily challenge access
+- Instructions and game guide
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### GamePage.js
 
-### Advanced Configuration
+The main game interface with:
+- Text display with character-by-character highlighting
+- Real-time statistics display
+- Timer for timed modes
+- Help menu with keyboard shortcuts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### ResultsPage.js
 
-### Deployment
+The post-game results screen showing:
+- Final WPM, accuracy, and score
+- Option to play again or return home
+- Statistics breakdown
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Future Enhancements
 
-### `npm run build` fails to minify
+- Multiplayer mode
+- User accounts to track progress over time
+- Custom themes
+- Additional difficulty levels
+- Text categories (code, literature, quotes, etc.)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+
+MIT
+
+## Author
+
+Gangadhar Gaikwad

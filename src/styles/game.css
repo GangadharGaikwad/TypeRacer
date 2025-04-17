@@ -1,0 +1,74 @@
+/* Retro style cursor effect */
+.cursor-blink {
+  position: relative;
+}
+
+.cursor-blink::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 1.2em;
+  background-color: #4ADE80;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Retro terminal effect */
+.terminal-effect {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Glowing text effect for scores */
+.text-glow {
+  text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+}
+
+/* Victory animations */
+@keyframes celebrate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.victory-animation {
+  animation: celebrate 0.5s ease-in-out;
+}
+
+/* Focus outline that matches the retro theme */
+.retro-focus:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #4ADE80, 0 0 0 4px rgba(74, 222, 128, 0.3);
+} 

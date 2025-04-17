@@ -1,0 +1,256 @@
+/* Results Page Styles */
+/* Results page wrapper */
+.results-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #000000;
+}
+
+.results-page-wrapper .min-h-screen {
+  flex: 1;
+}
+
+.results-page-wrapper .game-footer {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.simple-results-container {
+  width: 80%;
+  max-width: 600px;
+  padding: 2.5rem;
+  background-color: #111111;
+  color: #00FF00;
+  border: 1px solid #00FF00;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+  margin-bottom: 2rem;
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.header-line {
+  height: 1px;
+  background-color: #00FF00;
+  width: 25%;
+  margin: 0 1rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #00FF00;
+}
+
+.completion-message {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.simple-stats-container {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.simple-stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.simple-stat-label {
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+
+.simple-stat-value {
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  font-size: 1.1rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.play-again-button,
+.home-button {
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: #00FF00;
+  border: 1px solid #00FF00;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 48%;
+}
+
+.play-again-button:hover,
+.home-button:hover {
+  background-color: rgba(0, 255, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  transform: scale(1.05);
+}
+
+.challenge-info {
+  background-color: rgba(0, 255, 0, 0.05);
+  border-radius: 3px;
+}
+
+.enter-prompt {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Ensure the body and root background are black */
+body, #root, .min-h-screen {
+  background-color: #000000;
+  color: #00FF00;
+  font-family: 'Courier New', monospace;
+}
+
+/* Results Page Styles */
+:root {
+  --terminal-green: #0f0;
+  --terminal-green-dark: #00b000;
+  --terminal-green-glow: rgba(0, 255, 0, 0.5);
+  --black: #000;
+  --primary-color: var(--terminal-green);
+  --background-color: var(--black);
+}
+
+/* Console container styling */
+.console-container {
+  position: relative;
+  box-shadow: 0 0 40px rgba(0, 255, 0, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.console-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.console-container:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 25, 10, 0.1);
+  opacity: 0.15;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.console-content {
+  background-color: #000; 
+  position: relative;
+  min-height: 70vh;
+}
+
+/* Stat cards */
+.stat-card {
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Detailed stats section */
+.detailed-stats {
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
+}
+
+/* Final score section */
+.final-score {
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
+}
+
+/* Button styling */
+.button-group button {
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.button-group button:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Text effects */
+.text-green-500 {
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+}
+
+/* Rank animation */
+.rank {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    opacity: 1;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+  }
+  50% { 
+    opacity: 0.9;
+    text-shadow: 0 0 15px rgba(0, 255, 0, 1);
+  }
+}
+
+/* Background grid */
+.min-h-screen {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(0, 255, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+} 
